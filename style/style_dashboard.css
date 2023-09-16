@@ -1,0 +1,123 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    background-color: #444;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Section headings */
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Links inside sections */
+ul li a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Add more custom styles as needed */
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 18px;
+    }
+    
+    nav ul {
+        padding: 5px;
+    }
+    
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Adjust padding and font size for smaller screens as needed */
+    main {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+}
