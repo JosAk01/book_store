@@ -236,32 +236,51 @@ footer {
 
 /* Style the header/navigation bar */
 header {
-  background-color: #333;
+  position: fixed; /* Fixed position to keep the header at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
   color: #fff;
   text-align: center;
   padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+/* Style the navigation bar */
+.nav-bar {
+  background-color: #000; /* Background color for the navigation bar */
+  color: #fff; /* Text color for the navigation bar */
 }
 
-nav ul {
+/* Style the navigation links */
+.nav-bar ul {
   list-style: none;
 }
 
-nav ul li {
+.nav-bar ul li {
   display: inline;
   margin-right: 20px;
 }
 
-nav a {
+.nav-bar ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-bar ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
 }
 
+.nav-bar a:hover {
+  background-color: #f00; /* Background color on hover */
+}
+
 /* Style the main content section */
-.main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+main{
+width: 80% !important;
+border: 2px solid blue !important;
 }
 
 .book-list {
@@ -285,11 +304,15 @@ nav a {
 
 /* Style the footer */
 footer {
-  background-color: #333;
+  background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
 /* Style the user profile container */
 #profile-container {
   margin-left: 20px; /* Adjust as needed */
@@ -304,9 +327,76 @@ footer {
   border: 2px solid #ffffff; /* Add a white border around the image */
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
   cursor: pointer; /* Change cursor to pointer on hover */
+  margin-left: 10px;
 }
 
 /* Style the user profile image on hover (optional) */
 #profile-container img:hover {
   border: 2px solid #007BFF; /* Change the border color on hover */
+}
+/* Style for the "Buy" and "Add to Cart" buttons */
+.book-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-button, .cart-button {
+  background-color: #007BFF; /* Change this to your desired button color */
+  color: #fff; /* Change this to your desired text color */
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.buy-button:hover, .cart-button:hover {
+  background-color: #0056b3; /* Change this to your desired hover color */
+}
+
+/* Style for Font Awesome icons */
+.fa {
+  margin-right: 5px; /* Add spacing between icon and text */
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width:20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333; /* Change this to your desired background color */
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: #fff; /* Change this to your desired text color */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #555; /* Change this to your desired hover background color */
+}
+
+.sidebar .active a {
+  background-color: #007BFF; /* Change this to your desired active link background color */
+}
+
+.content-container{
+  border: 2px solid rgb(246, 255, 0);
+  width: 100%;
+  height: 100%;
 }

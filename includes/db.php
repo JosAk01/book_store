@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 define("DBNAME", "book_store");
 define("DBUSER","root");
 define("DBPASS","");

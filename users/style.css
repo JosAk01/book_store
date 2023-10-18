@@ -1,156 +1,171 @@
-/* Reset some default styles for better consistency */
-body, h1, h2, h3, p, ul, li {
-  margin: 0;
-  padding: 0;
-}
+.container{
 
-/* Apply a background color and text color to the entire page */
-body {
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
-  color: #333;
-  line-height: 1.6;
+height: 100vh;
+width: 100%;
 }
-
-/* Style the header */
-header {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
+#header{
+	position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #d6d5d5;
+    z-index: 2;
+		width:100%;
+		height:10%;
+		display:flex;
+ 	 justify-content: center;
 }
-
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+#logo{
+	color:rgb(156, 33, 156)
 }
-
-header p {
-  font-size: 1.2rem;
+.nav-bar{
+	top: 50px; /* Consider the header height */
+	left: 256px; /* Adjust to match nav-bar width */
+	background-color: #ddd;
+	z-index: 1; /* Place it below the header */
+  width: 100%;
+  height: 9vh;
+  background-color: #000000;
+  position: fixed;
 }
-
-/* Style the navigation menu */
-nav {
-  background-color: #333;
+.side-bar{
+  margin-top: 10px;
+  width: 20%;
+  height: 90%;
+  background-color: #000000;
+	position: fixed;
+  top: 50px; /* Consider the header height */
+  left: 2px; /* Adjust to match nav-bar width */
+  background-color: #000000;
+  z-index: 1; /* Place it below the header */
 }
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-nav ul li {
-  margin: 0;
-  padding: 0;
-  margin-right: 1rem;
-}
-
-nav ul li:last-child {
-  margin-right: 0;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-/* Style the main content */
-main {
-  padding: 2rem;
-}
-
-/* Style the featured books section */
-.featured-books {
-  text-align: center;
-}
-
-.featured-books h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.book {
-  display: inline-block;
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  text-align: center;
-}
-
-.book img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 0.5rem;
-}
-
-.book h3 {
-  font-size: 1.2rem;
-}
-
-/* Style the search books section */
-.search-books {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.search-books h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.search-books input[type="text"] {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  width: 70%;
-}
-
-.search-books button {
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
+.logout{
   cursor: pointer;
-  font-size: 1rem;
+}
+.side-bar ul {
+	list-style: none;
+	padding: 0;
 }
 
-/* Style the footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
+.side-bar li {
+	margin-bottom: 10px; /* Add space between items */
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  /* Adjust styles for smaller screens */
-  header h1 {
+.side-bar a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+	transition: background-color 0.3s; /* Add hover transition */
+}
+.side-bar a.active {
+	background-color: #333; /* Apply a different background color to the active item */
+}
+.side-bar a:hover {
+	background-color: #333; /* Change background color on hover */
+}
+
+.side-bar i {
+	margin-right: 10px; /* Add space between icon and text */
+}
+.main{
+
+  width: 80%;
+  height: 90%;
+  margin-top: 20vh;
+  margin-left: 20%;
+}
+#menu{
+	
+	margin:0;
+	list-style-type:none;
+	height:100%;
+}
+
+#menu li{
+	
+	display:inline-block;
+	
+}
+
+#menu li a{
+
+	text-decoration:none;
+	display:inline-block;
+	color:white;
+	padding:13px;
+  line-height: 36px;
+
+	}
+
+#menu li a:hover{
+	background-color:white;
+	color:black;
+}
+.book {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.book-image {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.book-image img {
+    max-width: 100%;
+    height: 200px !important;
+}
+
+.book-details {
+    flex: 2;
+}
+
+.book h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.book p {
+    margin: 0;
+}
+
+.rating {
     font-size: 1.5rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
-
-  nav ul li {
-    margin-right: 0.5rem;
-  }
-
-  .book {
-    margin: 0.5rem;
-    padding: 0.5rem;
-  }
-
-  .search-books input[type="text"] {
-    width: 100%;
-  }
+    color: #FFD700;
 }
 
-/* Add more custom styles as needed */
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+.read-more {
+	display: inline-block;
+	background-color: #007bff;
+	color: #fff;
+	padding: 5px 10px;
+	text-decoration: none;
+	margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.read-more:hover {
+	background-color: #0056b3;
+}
+
+
+.link-spacing {
+  margin-right: 30px; /* Adjust the margin as needed */
+}
+
+p {
+  font-family: 'Bebas Neue', sans-serif;
+  /* Add other styles as needed */
+}
