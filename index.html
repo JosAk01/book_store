@@ -1,185 +1,299 @@
 <!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="4/w3.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookStore</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+</head>
+<style>
+  /* Project Name: Landing Page Using SwiperJS
+Youtube: https://youtube.com/@devRasen
+Copyright: ©MdRasen */
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+
+/* General CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Custom CSS */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background: white;
+  overflow: auto;
+  padding: 0 50px;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  min-height: 4rem;
+  padding: 0 200px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+  background: white;
+  z-index: 1000; */
+}
+
+@media (max-width: $md) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0 0 1px gray;
+  }
+}
+
+.navbar .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar button {
+  cursor: pointer;
+  background: white;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-right: 2rem;
+}
+
+@media (max-width: $md) {
+  .navbar button {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.navbar .brand {
+  position: relative;
+  transform-origin: center;
+  height: 3rem;
+  padding-right: 0.625rem;
+  background: white;
+}
+
+.navbar .brand:hover::before {
+  animation: 1s spin;
+}
+
+.navbar .brand::before {
+  position: absolute;
+  content: "";
+  top: 0.875rem;
+  right: 0;
+  width: 2px;
+  height: 1.25rem;
+  border-left: solid 2px #CF450B;
+}
+
+.navbar .menu-btn {
+  margin-right: 0;
+  padding-right: 0.625rem;
+}
+
+@media (min-width: $md) {
+  .navbar .menu-btn {
+    display: none;
+  }
+}
+
+.navbar .tab {
+  color: gray;
+}
+
+.navbar .tab:nth-last-child(1) {
+  margin-right: 0;
+}
+
+.navbar .tabs {
+  @media (max-width: $md) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  @media (max-width: $md) and (.tabs.hidden) {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  column-gap: 40px;
+  padding: 50px 6%;
+  border: 2px solid yellow;
+}
+.display {
+border: 1px solid black;
+width: 40%;
+height: 800px;
+margin-left: 710px;
+padding: 10px 2%;
+}
+
+.container .side-info {
+  margin: 20px 0;
+}
+
+.container .side-info span {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  color: #717171;
+}
+
+.container .side-info h1 {
+  text-transform: capitalize;
+  letter-spacing: 0.8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  background-color: #005baa;
+  background-image: linear-gradient(45deg, #005baa, #000000);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.container .side-info hr {
+  display: block;
+  background: #005baa;
+  height: 4px;
+  width: 20%;
+  margin: 18px 0;
+}
+
+.container a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #717171;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 50px;
+  border: 2px solid #c2c2c2;
+  padding: 8px 16px;
+  margin-top: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.container a:hover {
+  border: 2px solid #005baa;
+  color: #005baa;
+}
+
+.container .swiper {
+  width: 100%;
+}
+
+;
+
+/* Responsive Design */
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .container .side-info {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container .side-info h1 {
+    font-size: 46px;
+  }
+
+  .container .side-info p {
+    font-size: 14px;
+  }
+}
+
+.more{
+  border: 2px solid red;
+  height: 100vh;
+}
+</style>
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="../Book_Store/img/book.jpeg" alt="books" width="1500" height="800">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
-  </div>
-</header>
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
-
-  <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-        <img src="../Book_Store/img/book.jpeg" alt="House" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-        <img src="../w3images/house2.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-        <img src="../w3images/house3.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-        <img src="../w3images/house4.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-        <img src="../w3images/house2.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-        <img src="../w3images/house5.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-        <img src="../w3images/house4.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-        <img src="../w3images/house3.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-  </div>
-
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-  </div>
-
-  <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="../w3images/team2.jpg" alt="John" style="width:100%">
-      <h3>John Doe</h3>
-      <p class="w3-opacity">CEO & Founder</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="../w3images/team1.jpg" alt="Jane" style="width:100%">
-      <h3>Jane Doe</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="../w3images/team3.jpg" alt="Mike" style="width:100%">
-      <h3>Mike Ross</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="../w3images/team4.jpg" alt="Dan" style="width:100%">
-      <h3>Dan Star</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Lets get in touch and talk about your next project.</p>
-    <form action="https://www.w3schools.com/action_page.php" target="_blank">
-      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+  <div class="navbar">
+    <div class="row">
+      <button class="brand">
+        <b>BOOKSTORE</b>
       </button>
-    </form>
+      <button class="menu-btn">
+        <svg t="1583388234559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2279" width="16" height="16"><path d="M128 213.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928zM128 725.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928zM128 469.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928z" p-id="2280" fill="#40403F"></path></svg>
+    </button>
+    </div>
+    <div class="tabs">
+      <button class="tab" data-text="About">
+        ABOUT
+      </button>
+      <button class="tab" data-text="Reviews">
+        REVIEWS
+      </button>
+      <button class="tab" data-text="Login or Signup">
+        <a href="#">LOG IN OR SIGNUP</a>
+      </button>
+    </div>
+  </div>
+<div class="container">
+  <!-- Side infos -->
+  <div class="side-info">
+    <span>discover</span>
+    <h1>Modern Books</h1>
+    <hr />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+      omnis quis nesciunt.
+    </p>
+    <a href="#">Browse More</a>
+  </div>
+
+  <div class="display"> 
   </div>
   
-<!-- End page content -->
+    
+  </div>
 </div>
 
-<!-- Google Map -->
-<div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
+<div class="more">
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="default.html" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
-
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
-
-<!-- Mirrored from www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_architect&stacked=h by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jul 2018 00:44:13 GMT -->
 </html>

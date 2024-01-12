@@ -15,7 +15,7 @@ try {
     {
         const IMAGE1 = 'lord.jpeg';
         const IMAGE2 = 'outsiders.jpeg';
-        const IMAGE3 = 'faults.jpeg';
+        const IMAGE3 = 'faults.jpg';
         const IMAGE4 = 'night.jpeg';
     }
     // Replace these with your actual database credentials
@@ -31,7 +31,7 @@ try {
     }
 
     $faker = Faker\Factory::create();
-    // $data = array();
+    //  $data = array();
     for ($i = 0; $i < 10; $i++) {
         $bookId = $faker->unique()->randomNumber(1);
         $bookTitle = $faker->sentence(4);
@@ -78,7 +78,7 @@ try {
    // echo 'seeder sucessful';
 // var_dump($data);
 // echo(json_encode($data));
-//    echo "Fake entries inserted successfully.";
+   echo "Fake entries inserted successfully.";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }

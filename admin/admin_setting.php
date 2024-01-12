@@ -1,122 +1,67 @@
 <?php
-include "../includes/user_auth.php";
-include '../includes/db.php';
-// require_once '../vendor/autoload.php';
-
-// // Gmail API credentials
-// $client = new Google_Client();
-// $client->setAuthConfig('path/to/credentials.json');
-// $client->setAccessType('offline');
-// $client->setScopes(Google_Service_Gmail::GMAIL_SEND);
-
-// // Set the access token (you need to implement a proper authentication flow to obtain this)
-// $accessToken = 'your_access_token';
-// $client->setAccessToken($accessToken);
-
-// // Create Gmail service
-// $gmailService = new Google_Service_Gmail($client);
-
-// // Function to send a notification email
-// function sendNotificationEmail($to, $subject, $message)
-// {
-//     global $gmailService;
-
-//     $mime = rtrim(strtr(base64_encode(sprintf(
-//         "From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n%s",
-//         'your@gmail.com', // Sender's email address
-//         $to,
-//         $subject,
-//         $message
-//     )), '+/', '-_'), '=');
-
-//     $message = new Google_Service_Gmail_Message();
-//     $message->setRaw($mime);
-
-//     // Send the email
-//     try {
-//         $gmailService->users_messages->send('me', $message);
-//     } catch (Exception $e) {
-//         echo 'Error sending notification: ' . $e->getMessage();
-//     }
-// }
-
-// if (isset($_POST['submit'])) {
-//     // ... (Your existing code)
-
-//     // Send notification email
-//     $to = 'recipient@gmail.com'; // Replace with the recipient's email address
-//     $subject = 'User Settings Updated';
-//     $message = 'User settings have been successfully updated.';
-
-//     sendNotificationEmail($to, $subject, $message);
-
-//     header("location: user_home.php");
-//     exit();
-// }
+include('../includes/admin_auth.php');
+include('../includes/db.php');
 
 if(isset($_GET['id'])){
-    $user_id = $_GET['id'];    
+  $admin_id = $_GET['id'];    
 } else {
-    header("Location: user_login.php");    
-    exit();
+  header("Location: admin_login.php");    
+  exit();
 }
 
-$statement = $conn->prepare("SELECT * FROM users WHERE user_id=:uid");
-$statement->bindParam(":uid", $user_id);
+$statement = $conn->prepare("SELECT * FROM admin WHERE admin_id=:aid");
+$statement->bindParam(":aid", $admin_id);
 $statement->execute();
 
 $record = $statement->fetch(PDO::FETCH_BOTH);
 if($statement->rowCount() < 1){
-    header("location: user_home.php");
-    exit();
+  header("location: admin_home.php");
+  exit();
 }
 
 if(isset($_POST['submit'])){
-    $error = array();
-    
-    if(empty($_POST['name'])) {
-        $error['name'] = "Enter Name";    
-    }
+  $error = array();
+  
+  if(empty($_POST['admin_name'])) {
+      $error['admin_name'] = "Enter Name";    
+  }
 
-    if(empty($_POST['email'])) {
-        $error['email'] = "Enter Email";
-    }
+  if(empty($_POST['email'])) {
+      $error['email'] = "Enter Email";
+  }
 
-    $error_password = array();
+  $error_password = array();
 
-    if (empty($_POST['hash'])) {
-        $error_password['hash'] = "Enter Password";
-    }
+  if (empty($_POST['hash'])) {
+      $error_password['hash'] = "Enter Password";
+  }
 
-    if (empty($_POST['confirm_hash'])) {
-        $error_password['confirm_hash'] = "Confirm Password";
-    } elseif ($_POST['hash'] != $_POST['confirm_hash']) {
-        $error_password['confirm_hash'] = "Passwords do not match";
-    }
+  if (empty($_POST['confirm_hash'])) {
+      $error_password['confirm_hash'] = "Confirm Password";
+  } elseif ($_POST['hash'] != $_POST['confirm_hash']) {
+      $error_password['confirm_hash'] = "Passwords do not match";
+  }
 
-    if(empty($error) && empty($error_password)){
-        // Hash the password before storing it
-        $hashed_password = password_hash($_POST['hash'], PASSWORD_DEFAULT);
+  if(empty($error) && empty($error_password)){
+      // Hash the password before storing it
+      $hashed_password = password_hash($_POST['hash'], PASSWORD_DEFAULT);
 
-        if (!empty($_POST['name']) || !empty($_POST['email']) || !empty($_POST['hash'])) {
-            $statement = $conn->prepare("UPDATE users SET name=:nm, email=:em, hash=:hs WHERE user_id=:uid");
-            $statement->bindParam(":nm", $_POST['name']);
-            $statement->bindParam(":em", $_POST['email']);
-            $statement->bindParam(":hs", $hashed_password);
-            $statement->bindParam(":uid", $user_id);
+      if (!empty($_POST['name']) || !empty($_POST['email']) || !empty($_POST['hash'])) {
+          $statement = $conn->prepare("UPDATE admin SET admin_name=:nm, email=:em, hash=:hs WHERE admin_id=:aid");
+          $statement->bindParam(":nm", $_POST['admin_name']);
+          $statement->bindParam(":em", $_POST['email']);
+          $statement->bindParam(":hs", $hashed_password);
+          $statement->bindParam(":aid", $admin_id);
 
-            $statement->execute();
-        }
+          $statement->execute();
+      }
 
-        header("Location: message.php?id=" . $_SESSION['user_id']);
+      header("Location: message.php?id=" . $_SESSION['admin_id']);
 
 
-    }		 
+  }		 
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,14 +69,17 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <title>User Settings</title>
+    <title>Admin Settings</title>
 <script defer>
     document.addEventListener('DOMContentLoaded', function () {
-        // Get the user ID from PHP and update the href attribute
-        var user_id = <?php echo json_encode($user_id); ?>;
-        var settingLink = document.getElementById('settingLink');
-        settingLink.innerHTML = '<a href="setting.php?id=' + user_id + '"><i class="fas fa-cog"></i> Setting</a>';
-    });
+    var admin_id = <?php echo json_encode($admin_id); ?>;
+    var settingLink = document.getElementById('settingLink');
+
+    if (settingLink) {
+        settingLink.innerHTML = '<a href="setting.php?id=' + admin_id + '"><i class="fas fa-cog"></i> Setting</a>';
+    }
+});
+
     function togglePasswordVisibility(inputId) {
     const passwordInput = document.getElementById(inputId);
     passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
@@ -248,7 +196,7 @@ if(isset($_POST['submit'])){
                 <li class="active">Profile</li>
                 <li>Security</li>
                 <li>Notifications</li>
-                <li> <a href="user_home.php" style="color:#fff">Back</a></li>
+                <li> <a href="admin_home.php" style="color:#fff">Back</a></li>
             </ul>
         </div>
         <div class="main">
@@ -256,12 +204,12 @@ if(isset($_POST['submit'])){
         <div class="setting" id="profile">
     <h3>Profile Settings</h3>
     <form action="" method="post">
-    <?php if(isset($error['name'])) { ?>
-      <p class="disappearing-text" style="color:red"><?php echo $error['name']; ?></p>
+    <?php if(isset($error['admin_name'])) { ?>
+      <p class="disappearing-text" style="color:red"><?php echo $error['admin_name']; ?></p>
     <?php } ?>
         <label for="name">Name:</label>
         <!-- Check if $record is set before using its properties -->
-        <input type="text" id="name" name="name" >
+        <input type="text" id="name" name="admin_name" >
         <?php if(isset($error['email'])) { ?>
       <p class="disappearing-text" style="color:red"><?php echo $error['email']; ?></p>
     <?php } ?>
@@ -289,7 +237,7 @@ if(isset($_POST['submit'])){
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" name="confirm_hash">
     <button type="submit" name="submit" value="Save Changes">Save Changes</button>
-    </form>
+     </form>
             <!-- More settings can be added as needed -->
         </div>
     </div>

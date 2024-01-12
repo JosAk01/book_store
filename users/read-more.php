@@ -28,7 +28,7 @@ try {
         echo '<div class="book-box">';
         echo '<div class="book">';
         echo '<div class="book-image">';
-        echo '<img src="../img/lord.jpeg" alt="Book Title">';
+        echo '<img src="../img/'.$row['image'].'" alt="Book Title">';
         echo '</div>';
         echo "Book Title: " . $row['book_title'] . "<br>";
         echo "Description: <span id='short-description-" . $bookId . "'>" . $limitedDescription . "</span>";

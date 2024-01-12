@@ -23,7 +23,7 @@ width: 100%;
 	background-color: #ddd;
 	z-index: 1; /* Place it below the header */
   width: 100%;
-  height: 9vh;
+  height: 7vh;
   background-color: #000000;
   position: fixed;
 }

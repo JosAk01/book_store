@@ -109,7 +109,7 @@ label {
 .book .book-quantity input {
   width: 40px;
 }
-.book .remove-product {
+.book .remove-book {
   border: 0;
   padding: 4px 8px;
   background-color: #c66;
@@ -120,4 +120,52 @@ label {
 }
 .book .remove-book:hover {
   background-color: #a44;
+}
+.total{
+  text-align: right !important;
+
+}
+.total .totals-item{
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.total .totals-item label {
+  float: left;
+  clear: both;
+  width: 89%;
+  text-align: right;
+}
+.total .totals-item .totals-value {
+  text-align: right;
+}
+.totals .totals-item-total {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+.checkout{
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
+.back{
+  float: middle;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+.back:hover {
+  background-color: #494;
 }

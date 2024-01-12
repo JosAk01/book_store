@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('../includes/user_auth.php');
 
 $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : null;
@@ -110,7 +109,7 @@ try {
         echo '<div class="book-box">';
         echo '<div class="book">';
         echo '<div class="book-image">';
-        echo '<img src="../img/lord.jpeg" alt="Book Title">';
+        echo '<img src="../img/'.$row['image'].'" alt="Book Image">';
         echo '</div>';
         echo '<div class="book-details">';
         echo '<h2>' . $row['book_title'] . '</h2>';
@@ -124,7 +123,7 @@ try {
         echo '&nbsp;';
         // echo '<a href="javascript:void(0)"  onclick="addToCart(' . $id . ')" class="add-to-cart btn btn-primary"><i class="fas fa-shopping-cart"></i>Add to cart</a>';
         // Add to Cart button with two different hrefs
-        echo '<a href="javascript:void(0)" class="btn btn-primary add-to-cart" data-id="' . $row['id'] . '" data-title="' . $row['book_title'] . '" data-price="' . $row['price'] . '">Add to Cart</a>';
+        echo '<a href="javascript:void(0)" class="btn btn-primary add-to-cart" data-id="' . $row['id'] . '" data-title="' . $row['book_title'] . '" data-price="' . $row['price'] . '" data-image="' . $row['image'] . '">Add to Cart</a>';
         echo '<p style="color:red; margin-top: 10px;">PRICE: $' . $row['price'] . '</p>';
 
         // Closing HTML tags

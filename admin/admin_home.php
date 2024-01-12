@@ -1,3 +1,29 @@
+<?php
+include('../includes/admin_auth.php');
+include('../includes/db.php');
+
+$admin_id = isset($_GET['admin_id']) ? $_GET['admin_id'] : null;
+
+// if (isset($_GET['id'])) {
+//     $admin_id = $_GET['id'];
+// } else {
+//     header("Location: admin_home.php");
+//     exit();
+// }
+// Count the total number of admin records in the database
+$query = "SELECT COUNT(*) as total_admins FROM users";
+$stmt = $conn->prepare($query);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($result) {
+    // Total number of admin records
+    $total_admins = $result['total_admins'];
+} else {
+    // Handle the case where the count query fails (e.g., display an error)
+    echo "Failed to retrieve the total number of admins.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +32,7 @@
     <title>Admin Homepage</title>
     <link rel="stylesheet" href="../users/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script>
-
-    // Fetch the cart count from session storage and update the cart count in the navbar
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('cart-count').innerText = sessionStorage.getItem('cartCount') || 0;
-    });
-</script>
 <style>
-    .cart-count-circle {
-  display: inline-block;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 0.2em 0.5em; /* Adjust as needed for size */
-  margin-left: 5px; /* Adjust as needed for spacing */
-}
 body {
         font-family: 'Arial', sans-serif;
         margin: 0;
@@ -113,9 +124,10 @@ body {
         <div class="side-bar">
     <ul>
         <li><a class="active" href="user_home.php"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="cart.php"><i class="fas fa-shopping-cart"></i> Cart <div class="cart-count-circle"><span id="cart-count">0</span></div></a></li>
+        <li><a href="#"><i class="fa fa-file-invoice"></i>Invoice</a></li>
         <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
-        <li><a href="#"><i class="fas fa-cog"></i> Setting</a></li>
+        <li><a href="users.php"><i class="fa fa-user"></i> Users</a></li>
+        <li id="settingLink"><a href="admin_setting.php?id=<?php echo  $_SESSION['admin_id']; ?>"><i class="fas fa-cog"></i> Setting</a></li>
         <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
 
         
@@ -123,7 +135,7 @@ body {
 </div>
        <main>
        <div class="admin-dashboard">
-                <div class="dashboard-item">
+                <div class="dashboard-item"> 
                     <i class="fas fa-eye"></i>
                     <h3>Today's Views</h3>
                     <p>1,234</p>
@@ -138,7 +150,7 @@ body {
                 <div class="dashboard-item">
                     <i class="fas fa-users"></i>
                     <h3>Total Users</h3>
-                    <p>5,678</p>
+                    <p><?php echo $total_admins; ?></p>
                 </div>
 
                 <div class="dashboard-item">

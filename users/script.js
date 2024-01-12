@@ -1,16 +1,17 @@
 let cart_count = 0;
 let arrayObj = [];
 var shoppingCart = (function () {
-    var obj = {};
+var obj = {};
 
-    obj.addToCart = function (bookId, bookTitle, bookPrice) {
+    obj.addToCart = function (bookId, bookTitle, bookPrice, bookImage) {
         console.log('Adding book to cart with ID:', bookId);
         
 
         arrayObj.push({
             book_id: bookId,
             book_title: bookTitle,
-            price: bookPrice
+            price: bookPrice,
+            image: bookImage,
         });
 
         sessionStorage.setItem("book-cart",JSON.stringify(arrayObj) );
@@ -34,8 +35,10 @@ var shoppingCart = (function () {
                 const bookId = this.dataset.id;
                 const bookPrice = this.dataset.price;
                 const bookTitle = this.dataset.title;
-
-                obj.addToCart(bookId, bookTitle, bookPrice);
+                const bookImage = this.dataset.image;
+                // console.log(bookQuantity);
+                
+                obj.addToCart(bookId, bookTitle, bookPrice, bookImage);
             });
         });
     });
