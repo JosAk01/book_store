@@ -39,3 +39,4 @@ const tick = () => {
 
 setInterval(() => { tick(); }, 1000);
 tick();
+// ajax call

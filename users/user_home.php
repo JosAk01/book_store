@@ -77,7 +77,7 @@ $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : null;
         <h1 id="logo">Book Store</h1>
         </div>
 
-        <div class="side-bar">
+<div class="side-bar">
     <ul>
         <li><a class="active" href="user_home.php"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="cart.php"><i class="fas fa-shopping-cart"></i>Cart <div class="cart-count-circle"><span id="cart-count"><?php echo $cartCount; ?></span></div></a></li>

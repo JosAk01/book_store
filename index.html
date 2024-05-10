@@ -33,21 +33,9 @@ Copyright: ©MdRasen */
   background: white;
   overflow: auto;
   padding: 0 50px;
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100vw;
-  min-height: 4rem;
-  padding: 0 200px;
-  justify-content: space-between;
-  align-items: center;
-  overflow: auto;
-  background: white;
-  z-index: 1000; */
 }
 
-@media (max-width: $md) {
+@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -72,7 +60,7 @@ Copyright: ©MdRasen */
   margin-right: 2rem;
 }
 
-@media (max-width: $md) {
+@media (max-width: 768px) {
   .navbar button {
     height: 4rem;
     display: flex;
@@ -108,14 +96,17 @@ Copyright: ©MdRasen */
   padding-right: 0.625rem;
 }
 
-@media (min-width: $md) {
+@media (min-width: 768px) {
   .navbar .menu-btn {
     display: none;
   }
 }
 
 .navbar .tab {
+  border: 1px solid red;
+  height: 40px;
   color: gray;
+  margin-top: 10px;
 }
 
 .navbar .tab:nth-last-child(1) {
@@ -123,14 +114,14 @@ Copyright: ©MdRasen */
 }
 
 .navbar .tabs {
-  @media (max-width: $md) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
   }
 
-  @media (max-width: $md) and (.tabs.hidden) {
+  @media (max-width: 768px) and (.tabs.hidden) {
     display: none;
   }
 }
@@ -145,59 +136,236 @@ Copyright: ©MdRasen */
   }
 }
 
+.body {
 
-.container {
-  width: 100%;
-  min-height: 100vh;
-  column-gap: 40px;
-  padding: 50px 6%;
-  border: 2px solid yellow;
+  width: auto;
+  height: 200%;
+  background-color: aliceblue;
 }
+
+/* Add your other styles here */
+
 .display {
-border: 1px solid black;
-width: 40%;
-height: 800px;
-margin-left: 710px;
-padding: 10px 2%;
+
+  height: 40vh;
+  display: flex;
+  margin: 10px;
+  background-color: rgb(24, 23, 23);
 }
 
-.container .side-info {
-  margin: 20px 0;
+.display-inner {
+
+  height: 90%;
+  width: 30%;
+  margin: 20px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
 }
 
-.container .side-info span {
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 16px;
-  color: #717171;
+.display-text {
+
+  width: 40%;
+  height: 80%;
+  margin: 15px;
+  margin-right: 30px;
 }
 
-.container .side-info h1 {
-  text-transform: capitalize;
-  letter-spacing: 0.8px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 56px;
-  background-color: #005baa;
-  background-image: linear-gradient(45deg, #005baa, #000000);
-  background-size: 100%;
-  background-repeat: repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+.display-pics {
+
+  width: 35%;
+  height: 80%;
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+.display-pics > img{
+  width: 100%;
+  height: 100%;
+}
+.recom {
+
+  height: 50vh;
+  margin-top: 50px;
+  background-color: white;
 }
 
-.container .side-info hr {
-  display: block;
-  background: #005baa;
-  height: 4px;
+.heading {
+ 
+  height: 5vh;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.pics-holder {
+  /* border: 1px solid orange; */
+  width: auto;
+  height: 90%;
+  display: flex;
+  margin: 10px;
+}
+
+.pics {
+  /* border: 1px solid green; */
   width: 20%;
-  margin: 18px 0;
+  height: 100%;
+  margin: 10px;
+}
+.self-pics {
+  /* border: 1px solid green; */
+  width: 20%;
+  height: 100%;
+  margin: 10px;
 }
 
-.container a {
+.more {
+  /* border: 1px solid saddlebrown; */
+  width: 100%;
+  height: 1000px;
+  display: flex;
+}
+
+.little {
+  /* border: 1px solid blue; */
+  height: 70%;
+  width: 70%;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.seller {
+  /* border: 1px solid goldenrod; */
+  width: 30%;
+  height: 98%;
+  margin: 20px;
+  background-color: white;
+  margin-top: 50px;
+  /* margin-left: 20%; */
+}
+
+.child {
+  /* border: 1px solid pink; */
+  width: 100%;
+  height: 70%;
+  margin: 20px;
+  margin-top: 0px;
+  background-color: white;
+  /* display: flex; */
+}
+
+.self {
+  /* border: 1px solid saddlebrown; */
+  width: 100%;
+  height: 67%;
+  margin: 20px;
+  background-color: white;
+}
+
+.get {
+  /* border: 1px solid purple; */
+  width: 100%;
+  height: 800px;
+  margin-top: 50px;
+}
+
+.get-heading {
+  text-align: center;
+}
+
+.month {
+  border: 1px solid yellow;
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+
+.paper-back {
+  border: 1px solid green;
+  width: 50%;
+  height: 100%;
+}
+
+.end-pic {
+  border: 1px solid red;
+  width: 85%;
+  height: 40%;
+  margin: 40px; 
+  background-color: white;
+}
+.end-pic > img{
+  width: 100%;
+  height: 100%;
+}
+
+.pics-1 {
+  border: 1px solid blue;
+  width: 85%;
+  height: 40%;
+  margin: 40px;
+  background-color: white;
+}
+
+.pics-2 {
+  border: 1px solid black;
+  width: 85%;
+  height: 40%;
+  margin: 40px;
+  display: flex;
+}
+
+.two {
+  border: 1px solid brown;
+  width: 50%;
+  height: 100%;
+  margin-left: 10px;
+  background-color: white;
+}
+.recom-pic{
+
+width: 100%;
+height: 75%;
+}
+.recom-pic > img{
+  width: 100%;
+  height: 100%;
+}
+.recom-text{
+
+width: 100%;
+height: 10%;
+}
+.recom-price-buy{
+
+padding: 3px 10px;
+width: 100%;
+height: 10%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.recom-price-buy a{
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #717171;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 50px;
+  border: 2px solid #c2c2c2;
+  padding: 8px 16px;
+  transition: 0.3s ease-in-out;
+}
+.recom-price-buy a:hover{
+  border: 2px solid #f26d01;
+  color: #f26d01;
+}
+.invi{
+  width: 100px;
+  height: 20%;
+  /* background-color: black; */
+}
+.display-text a{
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -210,43 +378,79 @@ padding: 10px 2%;
   margin-top: 20px;
   transition: 0.3s ease-in-out;
 }
-
-.container a:hover {
-  border: 2px solid #005baa;
-  color: #005baa;
+.display-text a:hover {
+  border: 2px solid #f26d01;
+  color: #f26d01;
 }
+.self-recom-pic{
 
-.container .swiper {
+width: 100%;
+height: 75%;
+}
+.self-recom-pic > img{
   width: 100%;
+  height: 100%;
 }
+.self-recom-text{
 
-;
-
-/* Responsive Design */
-@media (min-width: 800px) {
-  .container {
-    display: flex;
-    align-items: center;
-  }
-
-  .container .side-info {
-    margin-bottom: 20px;
-  }
+width: 100%;
+height: 10%;
 }
+.self-recom-price-buy{
 
-@media (max-width: 500px) {
-  .container .side-info h1 {
-    font-size: 46px;
-  }
-
-  .container .side-info p {
-    font-size: 14px;
-  }
+padding: 3px 10px;
+width: 100%;
+height: 10%;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
-
-.more{
-  border: 2px solid red;
-  height: 100vh;
+.self-recom-price-buy a{
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #717171;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 50px;
+  border: 2px solid #c2c2c2;
+  padding: 8px 16px;
+  transition: 0.3s ease-in-out;
+}
+.self-recom-price-buy a:hover{
+  border: 2px solid #f26d01;
+  color: #f26d01;
+}
+.seller-heading{
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px;
+}
+.seller-body{
+  /* border: 1px solid green; */
+  height: 23%;
+  display: flex;
+}
+.seller-num{
+  /* border: 1px solid yellow; */
+  width: 10%;
+  height: 100%;
+  align-content: center;
+  padding: 7px;
+}
+.seller-pic {
+  /* border: 1px solid black; */
+  width: 40%;
+  height: 100%;
+  padding: 4px 8px;
+}
+.seller-pic > img{
+  width: 100%;
+  height: 100%;
 }
 </style>
 <body>
@@ -267,33 +471,343 @@ padding: 10px 2%;
         REVIEWS
       </button>
       <button class="tab" data-text="Login or Signup">
-        <a href="#">LOG IN OR SIGNUP</a>
+        <a href="./users/user_login.php">LOG IN OR SIGNUP</a>
       </button>
     </div>
   </div>
-<div class="container">
-  <!-- Side infos -->
-  <div class="side-info">
-    <span>discover</span>
-    <h1>Modern Books</h1>
-    <hr />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-      omnis quis nesciunt.
-    </p>
-    <a href="#">Browse More</a>
+  <div class="body">
+    <div class="display">
+      <div class="display-inner">
+        <div class="display-text"> 
+          <div style="margin-top: 10%;">
+            <h1>TITLE OF THE BOOK</h1>
+          </div>
+          <div style="margin-top: 40%;">
+            <span><a href="#">Learn more</a></span>
+          </div>
+        </div>
+        <div class="display-pics">
+          <img src="img/lord.jpeg" alt="">
+        </div>
+      </div>
+      <div class="display-inner">
+        <div class="display-text"> 
+          <div style="margin-top: 10%;">
+            <h1>TITLE OF THE BOOK</h1>
+          </div>
+          <div style="margin-top: 40%;">
+            <span><a href="#">Learn more</a></span>
+          </div>
+        </div>
+        <div class="display-pics">
+          <img src="img/night.jpeg" alt="">
+        </div>
+      </div>
+      <div class="display-inner">
+        <div class="display-text"> 
+          <div style="margin-top: 10%;">
+            <h1>TITLE OF THE BOOK</h1>
+          </div>
+          <div style="margin-top: 40%;">
+            <span><a href="#">Learn more</a></span>
+          </div>
+        </div>
+        <div class="display-pics">
+          <img src="img/faults.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="recom">
+      <div class="heading">
+        <h1>Our recommendations</h1>
+      </div>
+      <div class="pics-holder">
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/outsiders.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/faults.jpg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/lord.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/night.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/lord.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/faults.jpg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="more">
+      <div class="little">
+        <div class="child">
+          <div style="border: 2px solid red; width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
+            <div><h1>For Little Readers</h1></div>
+            <div><a href="#" style="text-decoration: none; color: black;">View more</a></div>
+          </div>
+
+          <div style="border: 2px solid black; width: 100%; height: 90%; display: flex;">
+          <div class="pics">
+          <div class="recom-pic">
+            <img src="img/faults.jpg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/lord.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/outsiders.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/night.jpeg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="pics">
+          <div class="recom-pic">
+            <img src="img/faults.jpg" >
+          </div>
+          <div class="recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="self">
+          <div style="border: 2px solid red; width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
+            <div><h1>Self Development</h1></div>
+            <div><a href="#" style="text-decoration: none; color: black;">View more</a></div>
+          </div>
+          <div style="border: 2px solid blue; width: 100%; height: 90%; display: flex;">
+          <div class="self-pics">
+          <div class="self-recom-pic">
+            <img src="img/outsiders.jpeg" >
+          </div>
+          <div class="self-recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="self-recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="self-pics">
+          <div class="self-recom-pic">
+            <img src="img/night.jpeg" >
+          </div>
+          <div class="self-recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="self-recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="self-pics">
+          <div class="self-recom-pic">
+            <img src="img/faults.jpg" >
+          </div>
+          <div class="self-recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="self-recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="self-pics">
+          <div class="self-recom-pic">
+            <img src="img/lord.jpeg" >
+          </div>
+          <div class="self-recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="self-recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        <div class="self-pics">
+          <div class="self-recom-pic">
+            <img src="img/night.jpeg" >
+          </div>
+          <div class="self-recom-text">
+            <h2>Title of the book</h2>
+          </div>
+          <div class="self-recom-price-buy">
+            <h1 style="color: red;">$12</h1>
+            <a href="#">BUY</a>
+          </div>
+        </div>
+        </div>
+        
+        </div>
+      </div>
+      <div class="seller">
+        <div class="seller-heading">
+          <h1>Best Sellers</h1>
+          <a href="" style="text-decoration: none; color: black;">View more</a>
+        </div>
+        <div class="seller-body">
+          <div class="seller-num"><h1>1</h1></div>
+          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div>
+          <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
+          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          </div>
+        </div>
+        <div class="seller-body">
+          <div class="seller-num"><h1>2</h1></div>
+          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div>
+          <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
+          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          </div>
+        </div>
+        <div class="seller-body">
+          <div class="seller-num"><h1>3</h1></div>
+          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div>
+          <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
+          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          </div>
+        </div>
+        <div class="seller-body">
+          <div class="seller-num"><h1>4</h1></div>
+          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div>
+          <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
+          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="get">
+      <div class="get-heading">
+        <h1>Get Inspired</h1>
+      </div>
+      <div class="month">
+        <div class="paper-back">
+          <div class="end-pic">
+            <img src="" alt="">
+            <div class="invi">
+            </div>
+          </div>
+          <div class="end-pic">
+          </div>
+        </div>
+        <div class="paper-back">
+          <div class="pics-1">
+          </div>
+          <div class="pics-2">
+            <div class="two">
+              
+            </div>
+            <div class="two">
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
   </div>
 
-  <div class="display"> 
-  </div>
-  
-    
-  </div>
-</div>
-
-<div class="more">
-
-</div>
+<script src="includes/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

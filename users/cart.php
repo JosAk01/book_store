@@ -156,25 +156,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     document.getElementById('checkoutButton').addEventListener('click', function() {
         // You can access the selected cart items in the checkoutItems array here
         // ajax call
-        var dataToSend = {
-            checkoutItems: checkoutItems
-        };
-
-        console.log('Data to send:', dataToSend);
-        $.ajax({
-            type: "POST",
-            url: "store_checkout_items.php",
-            data: 'dataToSend',
-            success: function(responseData) {
-              console.log(responseData)
-                alert("data saved")
-            },
-            error: function(error) {
-                console.log(error);
-            }
+        fetch('store_checkout_items.php', {
+            method: 'POST',
+            contentType:"application/json",
+            body: JSON.stringify({book:checkoutItems})
         })
-
-
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response data as needed
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
         //Using sessionStorage
         // sessionStorage.setItem('checkoutItems', JSON.stringify(checkoutItems));
 

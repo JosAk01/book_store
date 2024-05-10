@@ -28,7 +28,7 @@ width: 100%;
   position: fixed;
 }
 .side-bar{
-  margin-top: 10px;
+  margin-top: 40px;
   width: 20%;
   height: 90%;
   background-color: #000000;
@@ -36,7 +36,7 @@ width: 100%;
   top: 50px; /* Consider the header height */
   left: 2px; /* Adjust to match nav-bar width */
   background-color: #000000;
-  z-index: 1; /* Place it below the header */
+  z-index: 5; /* Place it below the header */
 }
 .logout{
   cursor: pointer;

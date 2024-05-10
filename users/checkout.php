@@ -49,7 +49,7 @@
                 <path fill="#ff3d00" d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z" />
               </svg>
 
-              <input class="numbers" type="number" min="1" max="9999" placeholder="0000">-
+              <input class="numbers" type="number" min="0" max="9999" placeholder="0000">-
               <input class="numbers" type="number" placeholder="0000">-
               <input class="numbers" type="number" placeholder="0000">-
               <input class="numbers" type="number" data-bound="carddigits_mock" data-def="0000">
