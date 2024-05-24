@@ -31,6 +31,7 @@ if ($result_admins && $result_books) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Homepage</title>
+    <script src="../includes/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
@@ -354,7 +355,7 @@ if ($result_admins && $result_books) {
                 <div class="filter-sort">Filter & Sort</div>
                 <span><?php echo $total_books; ?> Items</span>
             </div>
-            <div class="book-list">
+            <!-- <div class="book-list">
                 <div class="book-item">
                     <img src="../img/lord.jpeg" alt="Book Image">
                     <div class="book-info">
@@ -368,7 +369,7 @@ if ($result_admins && $result_books) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- PHP code to fetch and display book details -->
             <?php
@@ -409,52 +410,65 @@ if ($result_admins && $result_books) {
     <div class="modal-content">
         <span class="close" onclick="closeEditModal()">&times;</span>
         <h2>Edit Book</h2>
-        <form id="editForm" method="POST" action="edit_book.php">
+        <form id="editForm" method="POST" action="edit_book.php" enctype="multipart/form-data">
             <input type="hidden" id="edit-book-id" name="id">
             <label for="title">Title</label>
             <input type="text" id="edit-title" name="title">
+            
             <label for="description">Description</label>
-            <input type="text" id="edit-description" name="description">
+            <textarea id="edit-description" name="description" rows="5" cols="33"></textarea>
+            
             <label for="author">Author</label>
             <input type="text" id="edit-author" name="author">
+            
             <label for="publication_year">Publication Year</label>
             <input type="text" id="edit-publication_year" name="publication_year">
+            
             <label for="country">Country</label>
             <input type="text" id="edit-country" name="country">
+            
             <label for="company">Company</label>
             <input type="text" id="edit-company" name="company">
+            
             <label for="price">Price</label>
             <input type="text" id="edit-price" name="price">
+            
             <label for="barcode">Barcode</label>
             <input type="text" id="edit-barcode" name="barcode">
+            
             <label for="isbn">ISBN</label>
             <input type="text" id="edit-isbn" name="isbn">
+            
             <label for="languages">Language</label>
             <input type="text" id="edit-languages" name="languages">
+            
             <label for="edit-image-path">Image Path</label>
             <input type="text" id="edit-image-path" name="image" readonly>
+            
             <label for="edit-image-upload">Upload New Image</label>
             <input type="file" id="edit-image-upload" accept="image/*" onchange="previewImage(this)">
+            
             <img id="edit-image-preview" src="#" alt="Preview" style="display: none;">
-            <button type="submit">Save</button>
+            <button type="button" id="editSave" onclick="editSaveBtn()">Save</button>
         </form>
     </div>
 </div>
 
-<!-- Delete Modal -->
 <div id="deleteModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeDeleteModal()">&times;</span>
-        <h2>Are you sure you want to delete this book?</h2>
+        <h2>Delete Book</h2>
+        <p>Are you sure you want to delete this book?</p>
         <form id="deleteForm" method="POST" action="delete_book.php">
             <input type="hidden" id="delete-book-id" name="id">
-            <button type="submit">Yes</button>
-            <button type="button" onclick="closeDeleteModal()">No</button>
+            <button type="button" id="deleteConfirm" onclick="deleteBtn()">Yes, Delete</button>
+            <button type="button" onclick="closeDeleteModal()">Cancel</button>
         </form>
     </div>
 </div>
 
-<script src="../includes/script.js">
+
+
 </script>
 </body>
 </html>
