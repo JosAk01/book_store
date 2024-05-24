@@ -10,14 +10,7 @@
 />
 </head>
 <style>
-  /* Project Name: Landing Page Using SwiperJS
-Youtube: https://youtube.com/@devRasen
-Copyright: ©MdRasen */
-
-/* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
-
-/* General CSS */
+  /* General CSS */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +18,7 @@ Copyright: ©MdRasen */
   font-family: "Open Sans", sans-serif;
 }
 
-/* Custom CSS */
+/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -34,7 +27,6 @@ Copyright: ©MdRasen */
   overflow: auto;
   padding: 0 50px;
 }
-
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -121,7 +113,7 @@ Copyright: ©MdRasen */
     align-items: flex-start;
   }
 
-  @media (max-width: 768px) and (.tabs.hidden) {
+  @media (max-width: 768px)  {
     display: none;
   }
 }
@@ -135,26 +127,22 @@ Copyright: ©MdRasen */
     opacity: 0.8;
   }
 }
-
-.body {
-
-  width: auto;
-  height: 200%;
-  background-color: aliceblue;
-}
-
-/* Add your other styles here */
-
+/* Display styles */
 .display {
-
   height: 40vh;
   display: flex;
   margin: 10px;
   background-color: rgb(24, 23, 23);
 }
 
-.display-inner {
+@media screen and (max-width: 500px) {
+  .display {
+    flex-direction: column !important;
+    width: 100%;
+  }
+}
 
+.display-inner {
   height: 90%;
   width: 30%;
   margin: 20px;
@@ -165,7 +153,6 @@ Copyright: ©MdRasen */
 }
 
 .display-text {
-
   width: 40%;
   height: 80%;
   margin: 15px;
@@ -173,33 +160,32 @@ Copyright: ©MdRasen */
 }
 
 .display-pics {
-
   width: 35%;
   height: 80%;
   background-size: cover;
   background-position: center; 
   background-repeat: no-repeat;
 }
-.display-pics > img{
+
+.display-pics > img {
   width: 100%;
   height: 100%;
 }
-.recom {
 
+/* Recommender section */
+.recom {
   height: 50vh;
   margin-top: 50px;
   background-color: white;
 }
 
 .heading {
- 
   height: 5vh;
   width: 30%;
   margin-left: 35%;
 }
 
 .pics-holder {
-  /* border: 1px solid orange; */
   width: auto;
   height: 90%;
   display: flex;
@@ -207,27 +193,24 @@ Copyright: ©MdRasen */
 }
 
 .pics {
-  /* border: 1px solid green; */
   width: 20%;
   height: 100%;
   margin: 10px;
 }
+
 .self-pics {
-  /* border: 1px solid green; */
   width: 20%;
   height: 100%;
   margin: 10px;
 }
 
 .more {
-  /* border: 1px solid saddlebrown; */
   width: 100%;
   height: 1000px;
   display: flex;
 }
 
 .little {
-  /* border: 1px solid blue; */
   height: 70%;
   width: 70%;
   margin: 20px;
@@ -235,27 +218,22 @@ Copyright: ©MdRasen */
 }
 
 .seller {
-  /* border: 1px solid goldenrod; */
   width: 30%;
   height: 98%;
   margin: 20px;
   background-color: white;
   margin-top: 50px;
-  /* margin-left: 20%; */
 }
 
 .child {
-  /* border: 1px solid pink; */
   width: 100%;
   height: 70%;
   margin: 20px;
   margin-top: 0px;
   background-color: white;
-  /* display: flex; */
 }
 
 .self {
-  /* border: 1px solid saddlebrown; */
   width: 100%;
   height: 67%;
   margin: 20px;
@@ -263,7 +241,6 @@ Copyright: ©MdRasen */
 }
 
 .get {
-  /* border: 1px solid purple; */
   width: 100%;
   height: 800px;
   margin-top: 50px;
@@ -274,77 +251,35 @@ Copyright: ©MdRasen */
 }
 
 .month {
-  border: 1px solid yellow;
   width: 100%;
-  height: 80%;
+  height: 100%;
+}
+
+.recom-pic {
+  width: 100%;
+  height: 75%;
+}
+
+.recom-pic > img {
+  width: 100%;
+  height: 100%;
+}
+
+.recom-text {
+  width: 100%;
+  height: 10%;
+}
+
+.recom-price-buy {
+  padding: 3px 10px;
+  width: 100%;
+  height: 10%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.paper-back {
-  border: 1px solid green;
-  width: 50%;
-  height: 100%;
-}
-
-.end-pic {
-  border: 1px solid red;
-  width: 85%;
-  height: 40%;
-  margin: 40px; 
-  background-color: white;
-}
-.end-pic > img{
-  width: 100%;
-  height: 100%;
-}
-
-.pics-1 {
-  border: 1px solid blue;
-  width: 85%;
-  height: 40%;
-  margin: 40px;
-  background-color: white;
-}
-
-.pics-2 {
-  border: 1px solid black;
-  width: 85%;
-  height: 40%;
-  margin: 40px;
-  display: flex;
-}
-
-.two {
-  border: 1px solid brown;
-  width: 50%;
-  height: 100%;
-  margin-left: 10px;
-  background-color: white;
-}
-.recom-pic{
-
-width: 100%;
-height: 75%;
-}
-.recom-pic > img{
-  width: 100%;
-  height: 100%;
-}
-.recom-text{
-
-width: 100%;
-height: 10%;
-}
-.recom-price-buy{
-
-padding: 3px 10px;
-width: 100%;
-height: 10%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.recom-price-buy a{
+.recom-price-buy a {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -356,16 +291,13 @@ align-items: center;
   padding: 8px 16px;
   transition: 0.3s ease-in-out;
 }
-.recom-price-buy a:hover{
+
+.recom-price-buy a:hover {
   border: 2px solid #f26d01;
   color: #f26d01;
 }
-.invi{
-  width: 100px;
-  height: 20%;
-  /* background-color: black; */
-}
-.display-text a{
+
+.display-text a {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -378,34 +310,37 @@ align-items: center;
   margin-top: 20px;
   transition: 0.3s ease-in-out;
 }
+
 .display-text a:hover {
   border: 2px solid #f26d01;
   color: #f26d01;
 }
-.self-recom-pic{
 
-width: 100%;
-height: 75%;
+.self-recom-pic {
+  width: 100%;
+  height: 75%;
 }
-.self-recom-pic > img{
+
+.self-recom-pic > img {
   width: 100%;
   height: 100%;
 }
-.self-recom-text{
 
-width: 100%;
-height: 10%;
+.self-recom-text {
+  width: 100%;
+  height: 10%;
 }
-.self-recom-price-buy{
 
-padding: 3px 10px;
-width: 100%;
-height: 10%;
-display: flex;
-justify-content: space-between;
-align-items: center;
+.self-recom-price-buy {
+  padding: 3px 10px;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.self-recom-price-buy a{
+
+.self-recom-price-buy a {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -417,12 +352,13 @@ align-items: center;
   padding: 8px 16px;
   transition: 0.3s ease-in-out;
 }
-.self-recom-price-buy a:hover{
+
+.self-recom-price-buy a:hover {
   border: 2px solid #f26d01;
   color: #f26d01;
 }
-.seller-heading{
-  /* border: 1px solid red; */
+
+.seller-heading {
   width: 100%;
   height: 5%;
   display: flex;
@@ -430,28 +366,269 @@ align-items: center;
   align-items: center;
   padding: 8px 8px;
 }
-.seller-body{
-  /* border: 1px solid green; */
+
+.seller-body {
   height: 23%;
   display: flex;
 }
-.seller-num{
-  /* border: 1px solid yellow; */
+
+.seller-num {
   width: 10%;
   height: 100%;
   align-content: center;
   padding: 7px;
 }
+
 .seller-pic {
-  /* border: 1px solid black; */
   width: 40%;
   height: 100%;
   padding: 4px 8px;
 }
-.seller-pic > img{
+
+.seller-pic > img {
   width: 100%;
   height: 100%;
 }
+
+.img-holder {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+
+.img-holder-1 {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  margin-top: 20px;
+}
+
+.img-1 {
+  width: 50%;
+  height: 100%;
+  margin: 10px;
+  position: relative;
+}
+
+.img-1 > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.two-img {
+  position: relative;
+}
+
+.two-img > img {
+  width: 100%;
+  height: 100%;
+}
+
+.invi {
+  width: 100%;
+  height: 30%;
+  background: rgba(0, 0, 0, 0.531);
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+.invi h1 {
+  margin: 10px;
+  font-size: 2em;
+  color: rgb(252, 252, 252);
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 500;
+  border: 2px solid #c2c2c2;
+  padding: 8px 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+  border: 2px solid #f26d01;
+  color: #f26d01;
+  margin-left: 20px;
+}
+
+.two {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.two-img {
+  width: 50%;
+  height: 100%;
+  margin-left: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #f8f8f8;
+  padding: 20px 40px;
+  border-top: 1px solid #e7e7e7;
+  margin-top: 100px;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.newsletter p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.newsletter-signup {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-signup input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.newsletter-signup button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #ff6600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-signup button:hover {
+  background-color: #e65c00;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-section h2, .footer-section h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 10px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-section .social-media a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-section .social-media img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Additional media queries */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .heading {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .pics {
+    width: 30%;
+  }
+
+  .self-pics {
+    width: 30%;
+  }
+
+  .display {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .display-inner, .display-text, .display-pics {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .more {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .little, .seller {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    padding: 20px 0;
+  }
+
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .heading {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .pics, .self-pics {
+    width: 100%;
+  }
+
+  .recom, .self, .get {
+    height: auto;
+  }
+}
+
 </style>
 <body>
   <div class="navbar">
@@ -599,12 +776,12 @@ align-items: center;
     <div class="more">
       <div class="little">
         <div class="child">
-          <div style="border: 2px solid red; width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
+          <div style=" width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
             <div><h1>For Little Readers</h1></div>
             <div><a href="#" style="text-decoration: none; color: black;">View more</a></div>
           </div>
 
-          <div style="border: 2px solid black; width: 100%; height: 90%; display: flex;">
+          <div style=" width: 100%; height: 90%; display: flex;">
           <div class="pics">
           <div class="recom-pic">
             <img src="img/faults.jpg" >
@@ -668,11 +845,11 @@ align-items: center;
         </div>
         </div>
         <div class="self">
-          <div style="border: 2px solid red; width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
+          <div style=" width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
             <div><h1>Self Development</h1></div>
             <div><a href="#" style="text-decoration: none; color: black;">View more</a></div>
           </div>
-          <div style="border: 2px solid blue; width: 100%; height: 90%; display: flex;">
+          <div style=" width: 100%; height: 90%; display: flex;">
           <div class="self-pics">
           <div class="self-recom-pic">
             <img src="img/outsiders.jpeg" >
@@ -744,7 +921,7 @@ align-items: center;
         </div>
         <div class="seller-body">
           <div class="seller-num"><h1>1</h1></div>
-          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div class="seller-pic"><img src="img/night.jpeg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
           <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
@@ -752,7 +929,7 @@ align-items: center;
         </div>
         <div class="seller-body">
           <div class="seller-num"><h1>2</h1></div>
-          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div class="seller-pic"><img src="img/outsiders.jpeg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
           <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
@@ -768,7 +945,7 @@ align-items: center;
         </div>
         <div class="seller-body">
           <div class="seller-num"><h1>4</h1></div>
-          <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
+          <div class="seller-pic"><img src="img/lord.jpeg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
           <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
@@ -781,30 +958,90 @@ align-items: center;
         <h1>Get Inspired</h1>
       </div>
       <div class="month">
-        <div class="paper-back">
-          <div class="end-pic">
-            <img src="" alt="">
+        <div class="img-holder">
+          <div class="img-1">
+            <img src="img/outsiders.jpeg" alt="">
             <div class="invi">
+              <h1>Best books of this month</h1>
+              <a href="#" class="button">Read More</a>
             </div>
           </div>
-          <div class="end-pic">
-          </div>
-        </div>
-        <div class="paper-back">
-          <div class="pics-1">
-          </div>
-          <div class="pics-2">
-            <div class="two">
-              
-            </div>
-            <div class="two">
-              
+          <div class="img-1">
+            <img src="img/faults.jpg" alt="">
+            <div class="invi">
+              <h1>Best books of this month</h1>
+              <a href="#" class="button">Read More</a>
             </div>
           </div>
         </div>
-        
+        <div class="img-holder-1">
+          <div class="img-1">
+            <img src="img/lord.jpeg" alt="">
+            <div class="invi">
+              <h1>Best books of this month</h1>
+              <a href="#" class="button">Read More</a>
+            </div>
+          </div>
+          <div class="img-1">
+            <div class="two">
+            <div class="two-img">
+              <img src="img/night.jpeg" alt="">
+              <div class="invi">
+               <h1>Best books of this month</h1>
+               <a href="#" class="button">Read More</a>
+              </div>
+            </div>
+            <div class="two-img">
+              <img src="img/outsiders.jpeg" alt="">
+              <div class="invi">
+               <h1>Best books of this month</h1>
+               <a href="#" class="button">Read More</a>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <footer>
+      <div class="newsletter">
+            <p>Let's stay in touch! Sign up to our newsletter and get the best deals!</p>
+            <div class="newsletter-signup">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Sign up</button>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section bookie">
+                <h2>BookStore</h2>
+                <div class="social-media">
+                    <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-section help">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">How to guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-section other">
+                <h3>Other</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact us</h3>
+                <p>Address: 123 Book Street, City, Country</p>
+                <p>Email: contact@bookstore.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+    </footer>
   </div>
 
 <script src="includes/app.js"></script>

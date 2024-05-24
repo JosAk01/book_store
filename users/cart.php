@@ -173,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // sessionStorage.setItem('checkoutItems', JSON.stringify(checkoutItems));
 
 
-        // window.location.href = 'checkout.php';
+        window.location.href = 'checkout.php';
     });
     document.getElementById('back').addEventListener('click', function(){
         window.location.href = 'user_home.php';
