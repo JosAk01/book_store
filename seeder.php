@@ -31,7 +31,7 @@ try {
     }
 
     $faker = Faker\Factory::create();
-    //  $data = array();
+     $data = array();
     for ($i = 0; $i < 10; $i++) {
         $bookId = $faker->unique()->randomNumber(1);
         $bookTitle = $faker->sentence(4);
@@ -41,7 +41,7 @@ try {
         $publicationYear = $faker->date();
         $country = $faker->country();
         $company = $faker->company();
-        $price = $faker->randomFloat(1, 20, 30) . "$";
+        $price = $faker->numberBetween(2000, 8000) . "NGN";
         $barcode = $faker->ean8();
         $isbn = $faker->ean13();
         $language = $faker->sentences(1);

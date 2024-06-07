@@ -83,6 +83,7 @@ $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : null;
         <li><a href="cart.php"><i class="fas fa-shopping-cart"></i>Cart <div class="cart-count-circle"><span id="cart-count"><?php echo $cartCount; ?></span></div></a></li>
         <li id="settingLink"><a href="setting.php?id=<?php echo  $_SESSION['user_id']; ?>"><i class="fas fa-cog"></i> Setting</a></li>
         <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
+        <li><a href="#"><i class="fa fa-file-invoice"></i>Invoice</a></li>
         <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
     </ul>
 </div>
@@ -124,7 +125,7 @@ try {
         // echo '<a href="javascript:void(0)"  onclick="addToCart(' . $id . ')" class="add-to-cart btn btn-primary"><i class="fas fa-shopping-cart"></i>Add to cart</a>';
         // Add to Cart button with two different hrefs
         echo '<a href="javascript:void(0)" class="btn btn-primary add-to-cart" data-id="' . $row['id'] . '" data-title="' . $row['book_title'] . '" data-price="' . $row['price'] . '" data-image="' . $row['image'] . '">Add to Cart</a>';
-        echo '<p style="color:red; margin-top: 10px;">PRICE: $' . $row['price'] . '</p>';
+        echo '<p style="color:red; margin-top: 10px;">PRICE: NGN - ' . $row['price'] . '</p>';
 
         // Closing HTML tags
         echo '</div>';

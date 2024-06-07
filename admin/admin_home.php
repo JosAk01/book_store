@@ -312,7 +312,7 @@ if ($result_admins && $result_books) {
         </div>
         <ul>
             <li><a class="active" ><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#"><i class="fa fa-file-invoice"></i>Invoice</a></li>
+            <li><a href="invoice.php"><i class="fa fa-file-invoice"></i>Invoice</a></li>
             <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
             <li><a href="users.php"><i class="fa fa-user"></i> Users</a></li>
             <li id="settingLink"><a href="admin_setting.php?id=<?php echo  $_SESSION['admin_id']; ?>"><i class="fas fa-cog"></i> Setting</a></li>

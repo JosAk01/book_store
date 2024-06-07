@@ -1,6 +1,7 @@
 {
     "require": {
         "fakerphp/faker": "^1.23",
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "yabacon/paystack-php":"^2.1"
     }
 }

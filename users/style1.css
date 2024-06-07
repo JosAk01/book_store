@@ -55,7 +55,7 @@
 .book .book-price:before,
 .book .book-line-price:before,
 .totals-value:before {
-  content: "$";
+  content: "NGN" !important;
 }
 body {
   padding: 0px 30px 30px 20px;
