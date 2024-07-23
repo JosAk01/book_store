@@ -47,7 +47,7 @@ if (isset($_POST['update_status'])) {
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1900px;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
@@ -115,8 +115,26 @@ if (isset($_POST['update_status'])) {
                 <tr>
                     <td><?php echo htmlspecialchars($order['id']); ?></td>
                     <td><?php echo htmlspecialchars($order['reference_no']); ?></td>
-                    <td><?php echo htmlspecialchars($order['order_details']); ?></td>
-                    <td><?php echo htmlspecialchars($order['total_amount']); ?></td>
+                    <td>
+                        <?php 
+                        $order_details = json_decode($order['order_details'], true);
+                        if (isset($order_details['custom_fields'])) {
+                            echo '<ul>';
+                            foreach ($order_details['custom_fields'] as $field) {
+                                $item_details = json_decode($field['value'], true);
+                                echo '<li>';
+                                echo 'Book Title: ' . htmlspecialchars($item_details['item']) . '<br>';
+                                echo 'Qty: ' . htmlspecialchars($item_details['quantity']) . '<br>';
+                                echo 'Price: ' . htmlspecialchars(number_format($item_details['price'], 2)) . ' ₦';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+                            echo htmlspecialchars($order['order_details']);
+                        }
+                        ?>
+                    </td>
+                    <td><?php echo htmlspecialchars($order['total_amount'] .' ₦'); ?></td>
                     <td class="status"><?php echo htmlspecialchars($order['status']); ?></td>
                     <td><?php echo htmlspecialchars($order['created_at']); ?></td>
                     <td><?php echo htmlspecialchars($order['updated_at']); ?></td>
@@ -141,4 +159,5 @@ if (isset($_POST['update_status'])) {
         </table>
     </div>
 </body>
+
 </html>
