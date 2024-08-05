@@ -27,7 +27,8 @@
   overflow: auto;
   padding: 0 50px;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 2000px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -41,6 +42,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .navbar button {
@@ -52,7 +54,7 @@
   margin-right: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 2000px) {
   .navbar button {
     height: 4rem;
     display: flex;
@@ -88,17 +90,39 @@
   padding-right: 0.625rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 2000px) {
   .navbar .menu-btn {
     display: none;
   }
 }
 
+/* Enhanced Tabs Styles */
 .navbar .tab {
-  border: 1px solid red;
   height: 40px;
-  color: gray;
+  color: #40403F;
   margin-top: 10px;
+  border: 1px solid transparent;
+  background: #f9f9f9;
+  padding: 0 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.navbar .tab:hover {
+  background: #CF450B;
+  color: white;
+  border-color: #CF450B;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .tab a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar .tab a:hover {
+  text-decoration: none;
 }
 
 .navbar .tab:nth-last-child(1) {
@@ -106,15 +130,21 @@
 }
 
 .navbar .tabs {
-  @media (max-width: 768px) {
-    display: flex;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 2000px) {
+  .navbar .tabs {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    width: 100%;
   }
 
-  @media (max-width: 768px)  {
-    display: none;
+  .navbar .tabs.show {
+    display: flex;
   }
 }
 
@@ -127,6 +157,8 @@
     opacity: 0.8;
   }
 }
+
+
 /* Display styles */
 .display {
   height: 40vh;
@@ -186,7 +218,7 @@
 }
 
 .pics-holder {
-  width: auto;
+  width: 100%;
   height: 90%;
   display: flex;
   margin: 10px;
@@ -632,26 +664,25 @@ footer {
 </style>
 <body>
   <div class="navbar">
-    <div class="row">
-      <button class="brand">
-        <b>BOOKSTORE</b>
-      </button>
-      <button class="menu-btn">
-        <svg t="1583388234559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2279" width="16" height="16"><path d="M128 213.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928zM128 725.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928zM128 469.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928z" p-id="2280" fill="#40403F"></path></svg>
+  <div class="row">
+    <button class="brand">
+      <b>BOOKSTORE</b>
     </button>
-    </div>
-    <div class="tabs">
-      <button class="tab" data-text="About">
-        ABOUT
-      </button>
-      <button class="tab" data-text="Reviews">
-        REVIEWS
-      </button>
-      <button class="tab" data-text="Login or Signup">
-        <a href="./users/user_login.php">LOG IN OR SIGNUP</a>
-      </button>
-    </div>
+    <button class="menu-btn">
+      <svg t="1583388234559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2279" width="16" height="16">
+        <path d="M128 213.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928zM128 725.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928zM128 469.34016l768 0q17.67424 0 30.16704 12.4928t12.4928 30.16704-12.4928 30.16704-30.16704 12.4928l-768 0q-17.67424 0-30.16704-12.4928t-12.4928-30.16704 12.4928-30.16704 30.16704-12.4928z" p-id="2280" fill="#40403F"></path>
+      </svg>
+    </button>
   </div>
+  <div class="tabs">
+    <button class="tab" data-text="About"><a href="../akinremijoshua76.com/index.html">ABOUT</a></button>
+    <button class="tab" data-text="Reviews">REVIEWS</button>
+    <button class="tab" data-text="Login or Signup">
+      <a href="./users/user_login.php">LOG IN OR SIGNUP</a>
+    </button>
+  </div>
+</div>
+
   <div class="body">
     <div class="display">
       <div class="display-inner">
@@ -659,8 +690,8 @@ footer {
           <div style="margin-top: 10%;">
             <h1>TITLE OF THE BOOK</h1>
           </div>
-          <div style="margin-top: 40%;">
-            <span><a href="#">Learn more</a></span>
+          <div style="margin-top: auto;">
+            <span><a href="./users/user_login.php">Learn more</a></span>
           </div>
         </div>
         <div class="display-pics">
@@ -672,8 +703,8 @@ footer {
           <div style="margin-top: 10%;">
             <h1>TITLE OF THE BOOK</h1>
           </div>
-          <div style="margin-top: 40%;">
-            <span><a href="#">Learn more</a></span>
+          <div style="margin-top: auto">
+            <span><a href="./users/user_login.php">Learn more</a></span>
           </div>
         </div>
         <div class="display-pics">
@@ -685,7 +716,7 @@ footer {
           <div style="margin-top: 10%;">
             <h1>TITLE OF THE BOOK</h1>
           </div>
-          <div style="margin-top: 40%;">
+          <div style="margin-top: auto">
             <span><a href="#">Learn more</a></span>
           </div>
         </div>
@@ -694,12 +725,13 @@ footer {
         </div>
       </div>
     </div>
-    <div class="recom">
-      <div class="heading">
-        <h1>Our recommendations</h1>
-      </div>
-      <div class="pics-holder">
-        <div class="pics">
+    <div class="child">
+          <div style=" width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
+            <div><h1>Our recommendation</h1></div>
+            <div><a href="./users/user_login.php" style="text-decoration: none; color: black;">View more</a></div>
+          </div>
+          <div style=" width: 100%; height: 90%; display: flex;">
+          <div class="pics">
           <div class="recom-pic">
             <img src="img/outsiders.jpeg" >
           </div>
@@ -708,7 +740,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -720,7 +752,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -732,7 +764,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -744,7 +776,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -756,7 +788,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -768,7 +800,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
       </div>
@@ -778,7 +810,7 @@ footer {
         <div class="child">
           <div style=" width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
             <div><h1>For Little Readers</h1></div>
-            <div><a href="#" style="text-decoration: none; color: black;">View more</a></div>
+            <div><a href="./users/user_login.php" style="text-decoration: none; color: black;">View more</a></div>
           </div>
 
           <div style=" width: 100%; height: 90%; display: flex;">
@@ -791,7 +823,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -803,7 +835,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -815,7 +847,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -827,7 +859,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="pics">
@@ -839,7 +871,7 @@ footer {
           </div>
           <div class="recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         </div>
@@ -847,7 +879,7 @@ footer {
         <div class="self">
           <div style=" width: 100%; height: 10%; display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
             <div><h1>Self Development</h1></div>
-            <div><a href="#" style="text-decoration: none; color: black;">View more</a></div>
+            <div><a href="./users/user_login.php" style="text-decoration: none; color: black;">View more</a></div>
           </div>
           <div style=" width: 100%; height: 90%; display: flex;">
           <div class="self-pics">
@@ -859,7 +891,7 @@ footer {
           </div>
           <div class="self-recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="self-pics">
@@ -871,7 +903,7 @@ footer {
           </div>
           <div class="self-recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="self-pics">
@@ -883,7 +915,7 @@ footer {
           </div>
           <div class="self-recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="self-pics">
@@ -895,7 +927,7 @@ footer {
           </div>
           <div class="self-recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         <div class="self-pics">
@@ -907,7 +939,7 @@ footer {
           </div>
           <div class="self-recom-price-buy">
             <h1 style="color: red;">$12</h1>
-            <a href="#">BUY</a>
+            <a href="./users/user_login.php">BUY</a>
           </div>
         </div>
         </div>
@@ -917,14 +949,14 @@ footer {
       <div class="seller">
         <div class="seller-heading">
           <h1>Best Sellers</h1>
-          <a href="" style="text-decoration: none; color: black;">View more</a>
+          <a href="./users/user_login.php" style="text-decoration: none; color: black;">View more</a>
         </div>
         <div class="seller-body">
           <div class="seller-num"><h1>1</h1></div>
           <div class="seller-pic"><img src="img/night.jpeg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
-          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          <div style="margin-top: 50px; color: red;"><h1>$12</h1></div>
           </div>
         </div>
         <div class="seller-body">
@@ -932,7 +964,7 @@ footer {
           <div class="seller-pic"><img src="img/outsiders.jpeg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
-          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          <div style="margin-top: 50px; color: red;"><h1>$12</h1></div>
           </div>
         </div>
         <div class="seller-body">
@@ -940,7 +972,7 @@ footer {
           <div class="seller-pic"><img src="img/faults.jpg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
-          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          <div style="margin-top: 50px; color: red;"><h1>$12</h1></div>
           </div>
         </div>
         <div class="seller-body">
@@ -948,7 +980,7 @@ footer {
           <div class="seller-pic"><img src="img/lord.jpeg" alt=""></div>
           <div>
           <div style="padding: 7px 7px;"><h1>TItle of the book</h1></div>
-          <div style="margin-top: 120px; color: red;"><h1>$12</h1></div>
+          <div style="margin-top: 50px; color: red;"><h1>$12</h1></div>
           </div>
         </div>
       </div>
@@ -963,14 +995,14 @@ footer {
             <img src="img/outsiders.jpeg" alt="">
             <div class="invi">
               <h1>Best books of this month</h1>
-              <a href="#" class="button">Read More</a>
+              <a href="./users/user_login.php" class="button">Read More</a>
             </div>
           </div>
           <div class="img-1">
             <img src="img/faults.jpg" alt="">
             <div class="invi">
               <h1>Best books of this month</h1>
-              <a href="#" class="button">Read More</a>
+              <a href="./users/user_login.php" class="button">Read More</a>
             </div>
           </div>
         </div>
@@ -979,7 +1011,7 @@ footer {
             <img src="img/lord.jpeg" alt="">
             <div class="invi">
               <h1>Best books of this month</h1>
-              <a href="#" class="button">Read More</a>
+              <a href="./users/user_login.php" class="button">Read More</a>
             </div>
           </div>
           <div class="img-1">
@@ -988,14 +1020,14 @@ footer {
               <img src="img/night.jpeg" alt="">
               <div class="invi">
                <h1>Best books of this month</h1>
-               <a href="#" class="button">Read More</a>
+               <a href="./users/user_login.php" class="button">Read More</a>
               </div>
             </div>
             <div class="two-img">
               <img src="img/outsiders.jpeg" alt="">
               <div class="invi">
                <h1>Best books of this month</h1>
-               <a href="#" class="button">Read More</a>
+               <a href="./users/user_login.php" class="button">Read More</a>
             </div>
             </div>
           </div>
@@ -1015,16 +1047,15 @@ footer {
                 <h2>BookStore</h2>
                 <div class="social-media">
                     <a href="https://www.linkedin.com/in/akinremi-joshua/"><img src="img/linkedin.png" alt="LinkedIn"></a>
-                    <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
-                    <a href="#"><img src="img/instagram.jpeg" alt="Instagram"></a>
+                    <a href="https://x.com/Jos_Ak001?t=YpoSLZGfPQgerRitC9ukFQ&s=09"><img src="img/twitter.png" alt="Twitter"></a>
+                    <a href="https://github.com/JosAk01"><img src="img/github.png" alt="Github"></a>
                 </div>
             </div>
             <div class="footer-section help">
                 <h3>Help</h3>
                 <ul>
                     <li><a href="includes/FAq.php">FAQ</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">How to guides</a></li>
+                    <li><a href="includes/cs.php">Customer Service</a></li>
                 </ul>
             </div>
             
@@ -1043,7 +1074,18 @@ footer {
         </div>
     </footer>
   </div>
-<script src="includes/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.menu-btn');
+  const tabs = document.querySelector('.tabs');
+
+  menuBtn.addEventListener('click', function() {
+    tabs.classList.toggle('show');
+  });
+});
+
+  </script>
+<!-- <script src="includes/app.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
