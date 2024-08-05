@@ -1,6 +1,6 @@
 <?php
 include('../includes/db.php');
-include('../includes/user_auth.php');
+// include('../includes/user_auth.php');
 
 // Fetch orders from database
 $sql = "SELECT * FROM orders";

@@ -1,78 +1,58 @@
 .container{
-
-height: 100vh;
-width: 100%;
-}
-#header{
-	position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #d6d5d5;
-    z-index: 2;
-		width:100%;
-		height:10%;
-		display:flex;
- 	 justify-content: center;
-}
-#logo{
-	color:rgb(156, 33, 156)
-}
-.nav-bar{
-	top: 50px; /* Consider the header height */
-	left: 256px; /* Adjust to match nav-bar width */
-	background-color: #ddd;
-	z-index: 1; /* Place it below the header */
   width: 100%;
-  height: 7vh;
-  background-color: #000000;
-  position: fixed;
+  display: flex;
+  height: 100vh;
 }
-.side-bar{
-  margin-top: 40px;
-  width: 20%;
-  height: 90%;
-  background-color: #000000;
-	position: fixed;
-  top: 50px; /* Consider the header height */
-  left: 2px; /* Adjust to match nav-bar width */
-  background-color: #000000;
-  z-index: 5; /* Place it below the header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+.side-bar {
+  width: 250px;
+  background-color: #002060;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.sidebar .logo {
+  text-align: center;
+}
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-bar li {
+  margin: 20px 0;
+}
+
+.side-bar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.side-bar a:hover {
+  background-color: #34495e;
 }
 .logout{
   cursor: pointer;
 }
-.side-bar ul {
-	list-style: none;
-	padding: 0;
-}
-
-.side-bar li {
-	margin-bottom: 10px; /* Add space between items */
-}
-
-.side-bar a {
-	display: block;
-	padding: 10px;
-	text-decoration: none;
-	color: white;
-	transition: background-color 0.3s; /* Add hover transition */
-}
-.side-bar a.active {
-	background-color: #333; /* Apply a different background color to the active item */
-}
-.side-bar a:hover {
-	background-color: #333; /* Change background color on hover */
-}
-
-.side-bar i {
-	margin-right: 10px; /* Add space between icon and text */
-}
-.main{
-
-  width: 80%;
-  height: 90%;
-  margin-top: 20vh;
-  margin-left: 20%;
+main {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  margin-top: 5vh;
 }
 #menu{
 	
@@ -169,3 +149,56 @@ p {
   font-family: 'Bebas Neue', sans-serif;
   /* Add other styles as needed */
 }
+.cart-count-circle {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em; /* Adjust as needed for size */
+  margin-left: 5px; /* Adjust as needed for spacing */
+}
+.cart-button {
+    position: relative;
+}
+#cart-count {
+    font-weight: bold;
+}
+.modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Style for the overlay background */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .details {
+            /* border: 2px solid #002060; */
+            margin-top: 20px;
+            border-radius: 5px;
+            height: auto;
+        }
+        /* Style for the button */
+        .logout-button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;}
