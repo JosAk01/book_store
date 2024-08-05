@@ -65,6 +65,7 @@ try {
             fullDescriptionElement.style.display = 'block';
         }
     }
+
 </script>
 
 <head>
