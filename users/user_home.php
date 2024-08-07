@@ -32,7 +32,6 @@ $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : null;
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i>Cart <div class="cart-count-circle"><span id="cart-count"><?php echo $cartCount; ?></span></div></a></li>
             <li id="settingLink"><a href="setting.php?id=<?php echo  $_SESSION['user_id']; ?>"><i class="fas fa-cog"></i> Setting</a></li>
             <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
-            <li><a href="#"><i class="fa fa-file-invoice"></i>Invoice</a></li>
             <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
         </ul>
     </div>
@@ -94,5 +93,31 @@ try {
         </main>
     </div>
     <script src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+    // Increment view count for each book
+    $('.book-box').each(function() {
+        var bookId = $(this).find('.add-to-cart').data('id');
+
+        $.ajax({
+            url: 'increment_view.php',
+            type: 'POST',
+            data: { book_id: bookId },
+            success: function(response) {
+                var result = JSON.parse(response);
+                if (result.status === 'success') {
+                    console.log('View count incremented for book ID: ' + bookId);
+                } else {
+                    console.error('Error incrementing view count: ' + result.message);
+                }
+            },
+            error: function() {
+                console.error('AJAX request failed');
+            }
+        });
+    });
+});
+
+    </script>
 </body>
 </html>

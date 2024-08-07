@@ -10,21 +10,29 @@ $stmt_admins = $conn->prepare($query_admins);
 $stmt_admins->execute();
 $result_admins = $stmt_admins->fetch(PDO::FETCH_ASSOC);
 
-// Count for books
+// Count the total number of books in the database
 $query_books = "SELECT COUNT(*) as total_books FROM books";
 $stmt_books = $conn->prepare($query_books);
 $stmt_books->execute();
 $result_books = $stmt_books->fetch(PDO::FETCH_ASSOC);
 
-if ($result_admins && $result_books) {
+// Sum the total view_count of all books in the database
+$query_view_count = "SELECT SUM(view_count) as total_views FROM books";
+$stmt_view_count = $conn->prepare($query_view_count);
+$stmt_view_count->execute();
+$result_view_count = $stmt_view_count->fetch(PDO::FETCH_ASSOC);
+
+if ($result_admins && $result_books && $result_view_count) {
     // Total number of admin records
     $total_admins = $result_admins['total_admins'];
     $total_books = $result_books['total_books'];
+    $total_views = $result_view_count['total_views'];
 } else {
     // Handle the case where the count query fails (e.g., display an error)
-    echo "Failed to retrieve the total number of admins.";
+    echo "Failed to retrieve the total number of records.";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -324,7 +332,7 @@ if ($result_admins && $result_books) {
             <div class="dashboard-item">
                 <i class="fas fa-eye"></i>
                 <h3>Today's Views</h3>
-                <p>1,234</p>
+                <p><?php echo $total_views; ?></p>
             </div>
 
             <div class="dashboard-item">
