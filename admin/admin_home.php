@@ -22,11 +22,18 @@ $stmt_view_count = $conn->prepare($query_view_count);
 $stmt_view_count->execute();
 $result_view_count = $stmt_view_count->fetch(PDO::FETCH_ASSOC);
 
+// Sum the total view_count of all books in the database
+$query_total_amount = "SELECT SUM(total_amount) as total_amount FROM orders";
+$stmt_total_amount = $conn->prepare($query_total_amount);
+$stmt_total_amount->execute();
+$result_total_amount = $stmt_total_amount->fetch(PDO::FETCH_ASSOC);
+
 if ($result_admins && $result_books && $result_view_count) {
     // Total number of admin records
     $total_admins = $result_admins['total_admins'];
     $total_books = $result_books['total_books'];
     $total_views = $result_view_count['total_views'];
+    $total_amount = $result_total_amount['total_amount'];
 } else {
     // Handle the case where the count query fails (e.g., display an error)
     echo "Failed to retrieve the total number of records.";
@@ -336,9 +343,9 @@ if ($result_admins && $result_books && $result_view_count) {
             </div>
 
             <div class="dashboard-item">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-money-bill-wave"></i>
                 <h3>Earnings</h3>
-                <p>$1,234.56</p>
+                <p>&#8358;<?php echo number_format($total_amount); ?></p>
             </div>
 
             <div class="dashboard-item">
