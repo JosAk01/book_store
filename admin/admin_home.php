@@ -402,7 +402,7 @@ if ($result_admins && $result_books && $result_view_count) {
                     echo '<div class="book-info">';
                     echo '<h2>' . $row['book_title'] . '</h2>';
                     echo '<p style="font-family: \'Bebas Neue\', sans-serif;">' . $limitedDescription . '</p>';
-                    echo '<p style="color:red; margin-top: 10px;">PRICE: $' . $row['price'] . '</p>';
+                    echo '<p style="color:red; margin-top: 10px;">PRICE: &#8358;' . $row['price'] . '</p>';
                     echo '<div class="buttons">
                             <button class="edit-btn" onclick="openEditModal(\'' . $row['book_title'] . '\', \'' . $row['description'] . '\', \'' . $row['author'] . '\', \'' . $row['publication_year'] . '\', \'' . $row['country'] . '\', \'' . $row['company'] . '\', \'' . $row['price'] . '\', \'' . $row['barcode'] . '\', \'' . $row['isbn'] . '\', \'' . $row['languages'] . '\', \'../img/' . $row['image'] . '\', ' . $id . ')">Edit</button>
                             <button class="delete-btn" onclick="openDeleteModal(' . $id . ')">Delete</button>
