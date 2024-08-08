@@ -394,6 +394,7 @@ if ($result_admins && $result_books && $result_view_count) {
 
                 foreach ($stmt as $row) {
                     $id = $row['id'];
+                    
                     $limitedDescription = substr($row['description'], 0, 500) . '...';
 
                     echo '<div class="book-list">';
